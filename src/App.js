@@ -8,6 +8,7 @@ function App() {
   
   const data = useData();
   const [selVillage, setSelVillage] = useState(null);
+  const [location,setLocation] = useState(null);
 
 
   if(!data){
@@ -19,10 +20,10 @@ function App() {
   return (
     <div className="app">
       <div id="app__left">
-      <Map data={data} setSelVillage={setSelVillage}/>
+      <Map data={data} setSelVillage={setSelVillage} location={location} setLocation={setLocation}/>
       </div>
       <div id="app__right">
-        <SideBar data={data} selVillage={selVillage} setSelVillage={setSelVillage}/>
+        <SideBar data={data} selVillage={selVillage} setSelVillage={setSelVillage} location={location} setLocation={setLocation}/>
       </div>
     </div>
   );

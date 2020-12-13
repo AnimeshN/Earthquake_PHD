@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import ReactMapGL, {Marker, Popup, ScaleControl,NavigationControl, BaseControl} from 'react-map-gl'
 import {ColoredLine} from "../../utils"
-export const Map = ({data, setSelVillage}) =>{
+export const Map = ({data, setSelVillage,location,setLocation}) =>{
     const [viewport,setViewport] = useState({
         width: "100%",
         height: "100vh",
@@ -10,8 +10,6 @@ export const Map = ({data, setSelVillage}) =>{
         zoom: 11
     })
 
-    const [location,setLocation] = useState(null);
-    
     const setLocationIcon = susceptibility =>{
       if(susceptibility === "HIGH")
         return <i class="fas fa-map-pin m-1 red-text fa-lg"></i>
