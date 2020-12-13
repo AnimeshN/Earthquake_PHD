@@ -51,8 +51,13 @@ export const Map = ({data, setSelVillage,location,setLocation}) =>{
     <Popup latitude={location.Lat} longitude={location.Long}
             onClose={()=>{setLocation(null)}}
     >
-       <div>
-         {location.Village}
+       <div style={{display:'flex',flexDirection:"column"}}>
+         <h4 class="text-center">{location.Village}</h4>
+         <ColoredLine/>
+         <div style={{display:"flex",gap:"10px"}}>
+          <span><small><b>Latitude: </b>{(location.Lat).toFixed(4)}</small></span>
+          <span><small><b>Longitude: </b>{(location.Long).toFixed(4)}</small></span>
+         </div>
          </div> 
     </Popup>
   ):null}

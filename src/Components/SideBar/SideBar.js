@@ -13,7 +13,7 @@ export const  SideBar = ({data, selVillage, setSelVillage,location,setLocation})
     return(
     <div id="sidebar">
     <FormControl style={{width:"100%"}}>
-      <InputLabel id="demo-simple-select-label">Select Village</InputLabel>
+      <InputLabel id="demo-simple-select-label">Select Location</InputLabel>
       <Select
         labelId="demo-simple-select-label"
         id="demo-simple-select"
@@ -25,21 +25,6 @@ export const  SideBar = ({data, selVillage, setSelVillage,location,setLocation})
         <MenuItem value={d.ID}>{d.ID}</MenuItem>
         ))}
       </Select>
-      {/* Erosion: "no"
-Hydrology: "Dry"
-ID: "L3"
-Joint_failure: "no"
-Lat: 30.811111111111114
-Long: 78.2183888888889
-Overburden Depth: "1-2m"
-Rainfall: "no"
-River_Bank_failure: "no"
-Road_Influence: "no"
-Rockstate: "massive"
-Susceptibility: "HIGH"
-Toe_failure: "no"
-Village: "Dubatta"
-Weathering: "high" */}
 
 <TableContainer>
     <Table>
@@ -59,7 +44,7 @@ Weathering: "high" */}
                 <TableCell> {location?.Rainfall}</TableCell>
             </TableRow>
             <TableRow>
-                <TableCell> River_Bank_failure</TableCell>
+                <TableCell> River Bank failure</TableCell>
                 <TableCell> {location?.River_Bank_failure}</TableCell>
             </TableRow>
             <TableRow>
@@ -67,15 +52,15 @@ Weathering: "high" */}
                 <TableCell> {location?.Overburden_Depth}</TableCell>
             </TableRow>
             <TableRow>
-                <TableCell> Road_Influence</TableCell>
+                <TableCell> Road Influence</TableCell>
                 <TableCell> {location?.Road_Influence}</TableCell>
             </TableRow>
             <TableRow>
-                <TableCell> Rockstate</TableCell>
+                <TableCell> Rock State</TableCell>
                 <TableCell> {location?.Rockstate}</TableCell>
             </TableRow>
             <TableRow>
-                <TableCell> Toe_failure</TableCell>
+                <TableCell> Toe failure</TableCell>
                 <TableCell> {location?.Toe_failure}</TableCell>
             </TableRow>
             <TableRow>

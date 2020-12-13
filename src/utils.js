@@ -3,7 +3,9 @@ export const ColoredLine = ({ color }) => (
         style={{
             color: color,
             backgroundColor: color,
-            height: 2
+            height: 2,
+            marginTop:"1px",
+            marginBottom:"1px"
         }}
     />
   );
@@ -16,5 +18,5 @@ export const degreeToDecimal = (val) =>{
         second = 0
     else
         second = parseFloat(val.split("°")[1].split("'")[1].split('"')[0])/3600
-    return degree+minute+second
+    return (degree+minute+second)
 }
