@@ -1,9 +1,20 @@
 import {useEffect, useState} from 'react'
-import ReactMapGL, {Marker, Popup} from 'react-map-gl'
+import ReactMapGL, {Marker, Popup, ScaleControl,NavigationControl, BaseControl} from 'react-map-gl'
 import {csv} from 'd3-request'
 import {FormControl, Select, MenuItem,InputLabel,ButtonGroup,Button} from '@material-ui/core';
 
 import './App.scss';
+
+
+const ColoredLine = ({ color }) => (
+  <hr
+      style={{
+          color: color,
+          backgroundColor: color,
+          height: 2
+      }}
+  />
+);
 
 function App() {
 
@@ -104,7 +115,16 @@ function App() {
                </div> 
           </Popup>
         ):null}
-
+        <div className="navigation" style={{display:'flex',margin:"10px"}}>
+        {/* <NavigationControl/> */}
+        <div style={{backgroundColor:"rgb(0, 0, 0,.3)",color:"white",padding:"10px",display:"flex",flexDirection:"column",gap:"10px",borderRadius:"20px"}}>
+        <h6><b>Susceptibility</b></h6><ColoredLine color="white" />
+          <span><i class="fas fa-map-pin m-1 red-text fa-lg" ></i>High</span>
+          <span><i class="fas fa-map-pin m-1 yellow-text fa-lg"></i>Moderate</span>
+          <span><i class="fas fa-map-pin m-1 green-text fa-lg"></i>Low</span>
+        </div>
+        </div>
+        
           </ReactMapGL>
         </div>
       </div>
