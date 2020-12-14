@@ -1,4 +1,12 @@
-import {FormControl, Select, MenuItem,InputLabel,ButtonGroup,Button, TableContainer, TableHead, TableBody, TableCell,Table,TableRow} from '@material-ui/core';
+import {FormControl, Select, MenuItem,InputLabel,
+    TableContainer, TableHead, 
+    TableBody, TableCell,Table,TableRow} from '@material-ui/core';
+
+import {SusceptibilityAlert} from "./SusceptibilityAlert";
+
+
+
+import "./SideBar.scss"
 export const  SideBar = ({data, selVillage, setSelVillage,location,setLocation}) => {
     
     const handleChange = e =>{
@@ -75,14 +83,14 @@ export const  SideBar = ({data, selVillage, setSelVillage,location,setLocation})
                 <TableCell> Hydrology</TableCell>
                 <TableCell> {location?.Hydrology}</TableCell>
             </TableRow>
-            <TableRow>
+            {/* <TableRow>
                 <TableCell> Susceptibility</TableCell>
                 <TableCell> {location?.Susceptibility}</TableCell>
-            </TableRow>
+            </TableRow> */}
         </TableBody>
     </Table>
 </TableContainer>
-     
+        <SusceptibilityAlert value={location?.Susceptibility}/>
 
     </FormControl>
     </div>

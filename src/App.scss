@@ -2,12 +2,13 @@
     margin: 0px;
 }
 
-body{
+html, body{
     display: fixed;
     height: 100%;
     width: 100%;
     // background-color: red;
     box-sizing: content-box;
+    overflow: hidden;
 }
 
 .app{
