@@ -8,7 +8,7 @@ html, body{
     width: 100%;
     // background-color: red;
     box-sizing: content-box;
-    overflow: hidden;
+    // overflow:visible;
 }
 
 .app{
@@ -37,7 +37,7 @@ html, body{
         justify-items: center;
         justify-content: space-between;
         gap:20px;
-        
+        overflow: hidden;        
         #sidebar{
             width: 100%;
         }

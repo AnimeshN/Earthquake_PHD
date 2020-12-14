@@ -1,7 +1,16 @@
+sidebar{
+    margin: 10px;
+    text-align: center;
+}
 tr {
-    height: 10px;
+    height: 10px !important;
   }
   
   tr td {
      height: auto !important;
+  }
+
+  #infotable{
+      overflow-y: scroll;
+      max-height: 70%;
   }
