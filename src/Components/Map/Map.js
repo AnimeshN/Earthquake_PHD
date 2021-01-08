@@ -5,15 +5,15 @@ export const Map = ({data, setSelVillage,location,setLocation}) =>{
     const [viewport,setViewport] = useState({
         width: "100%",
         height: "100vh",
-        latitude: 30.820,
-        longitude: 78.2196,
+        latitude: 30.850,
+        longitude: 78.2996,
         zoom: 11
     })
 
     const setLocationIcon = susceptibility =>{
-      if(susceptibility === "HIGH")
+      if(susceptibility === "high")
         return <i class="fas fa-map-pin m-1 red-text fa-lg"></i>
-      else if(susceptibility === "LOW")
+      else if(susceptibility === "low")
         return <i class="fas fa-map-pin m-1 green-text fa-lg"></i>
       else
         return <i class="fas fa-map-pin m-1 yellow-text fa-lg"></i>
@@ -27,14 +27,14 @@ export const Map = ({data, setSelVillage,location,setLocation}) =>{
     onViewportChange={ viewport =>{setViewport(viewport)}}>
       {data.map(d=>{
         return <Marker
-                  key={d.Lat+d.Long+d.Village}
+                  key={d.Lat+d.Long+d.Vill}
                   latitude={d.Lat}
                   longitude={d.Long}
                   >
                 <div onClick={e =>{
                     e.preventDefault();
                     setLocation(d);
-                    setSelVillage(d.ID)
+                    setSelVillage(d.Loc)
                   }}>
                   {setLocationIcon(d.Susceptibility)}
 
@@ -52,7 +52,7 @@ export const Map = ({data, setSelVillage,location,setLocation}) =>{
             onClose={()=>{setLocation(null)}}
     >
        <div style={{display:'flex',flexDirection:"column"}}>
-         <h4 class="text-center">{location.Village}</h4>
+         <h4 class="text-center">{location.Vill}</h4>
          <ColoredLine/>
          <div style={{display:"flex",gap:"10px"}}>
           <span><small><b>Latitude: </b>{(location.Lat).toFixed(4)}</small></span>

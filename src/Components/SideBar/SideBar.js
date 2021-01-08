@@ -13,24 +13,25 @@ export const  SideBar = ({data, selVillage, setSelVillage,location,setLocation})
     const handleChange = e =>{
         let village_id = e.target.value;
         setSelVillage(village_id);
-        setLocation(data.filter(d => d.ID === village_id)[0])
+        setLocation(data.filter(d => d.Loc === village_id)[0])
       }
 
-    
     useEffect(()=>{
         if(location){
-            const arg1 = location.Rockstate 
-            const arg2 = location.Hydrology	
-            const arg3 = location.Weathering	
-            const arg4 = location.Overburden_Depth	
+            const arg1 = location.Geomorphology 
+            const arg2 = location.RockChar	
+            const arg3 = location.OverburdenThickness	
+            const arg4 = location.Hydrology	
             const arg5 = location.Erosion	
             const arg6 = location.Rainfall	
-            const arg7 = location.Road_Influence	
-            const arg8 = location.Joint_failure	
-            const arg9 = location.River_Bank_failure	
-            const arg10 = location.Toe_failure
+            const arg7 = location.Anthropogenic	
+            const arg8 = location.SlopeType	
+            const arg9 = location.LandslideMaterial	
+            const arg10 = location.Movement
+            const arg11 = location.Style
     
-            const url = `http://localhost:8000/api/${arg1}/${arg2}/${arg3}/${arg4}/${arg5}/${arg6}/${arg7}/${arg8}/${arg9}/${arg10}`;
+            const url = `http://localhost:8000/api/${arg1}/${arg2}/${arg3}/${arg4}/${arg5}/${arg6}/${arg7}/${arg8}/${arg9}/${arg10}/${arg11}`;
+            console.log(url);
             fetch(url)
             .then(response => response.json())
             .then(json => setSus(json.Susceptibility));
@@ -42,7 +43,7 @@ export const  SideBar = ({data, selVillage, setSelVillage,location,setLocation})
     return(
     <div id="sidebar">
     <FormControl  style={{width:"100%"}}>
-      <InputLabel id="demo-simple-select-label">Select Location</InputLabel>
+      {(!selVillage)?<InputLabel id="demo-simple-select-label">Select Location</InputLabel>:<></>}
       <Select
         labelId="demo-simple-select-label"
         id="demo-simple-select"
@@ -51,7 +52,7 @@ export const  SideBar = ({data, selVillage, setSelVillage,location,setLocation})
         onChange={handleChange}
       >
         {data.map(d => (
-        <MenuItem key={d.ID} value={d.ID}>{d.ID}</MenuItem>
+        <MenuItem key={d.Loc} value={d.Loc}>{d.Loc}</MenuItem>
         ))}
       </Select>
       </FormControl>

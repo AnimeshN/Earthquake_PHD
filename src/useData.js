@@ -5,7 +5,7 @@ import {degreeToDecimal} from './utils'
 
 export const useData = () =>{
     const [data,setData] = useState(null);
-    const url ="https://gist.githubusercontent.com/AnimeshN/559e4a8d5c72f231e2230209118223fa/raw/dd166ca1c9a051438d9e2cd6f3344831f7c9f169/earthquakeV2_1.csv"
+    const url="https://gist.githubusercontent.com/AnimeshN/9a4a3cb798a8bad7a60127d0c5916b1c/raw/823fc656150bc754bb472a485f6752a0ac52e460/landslide_suscepV2_1.csv"
     useEffect(()=>{
         csv(url,d=>{
           d.forEach(element => {

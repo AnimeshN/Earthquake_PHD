@@ -11,6 +11,7 @@ export const ColoredLine = ({ color }) => (
   );
 
 export const degreeToDecimal = (val) =>{
+    console.log(val)
     let degree = parseInt(val.split("°")[0])
     let minute = parseFloat(val.split("°")[1].split("'")[0])/60;
     let second;
